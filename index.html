@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <Title> A Client side Composable System </Title>
+    <script type="text/javascript">
+
+
+        function req(url, name, callback) {
+            const d = [url]
+            require(d)
+            const deps = !(name instanceof Array) ? [name] : name;
+            while (i = deps.pop()) (
+                function (dep) {
+                    define(dep, d, function (b) {
+                        (callback || function () {
+                        })(b)
+                        return b[ dep ];
+                    })
+                }
+            )(i)
+
+        }
+
+        function requireMore(url, name, callback) {
+            function callMe(d) {
+                debugger;
+                if (callback) {
+                    callback(d)
+                }
+            }
+
+            req(url, name, callMe)
+        }
+    </script>
+
+    <script type="text/javascript">
+
+    </script>
+
+
+</head>
+
+<body>
+<div id="landing"></div>
+<script type="text/javascript">
+
+    const element = document.getElementById('landing')
+    fetch("firstLayout.js").then(x => x.text()).then(text => {
+        const fn = eval(text)
+        fn(element)
+    })
+
+</script>
+</body>
+
+</html>

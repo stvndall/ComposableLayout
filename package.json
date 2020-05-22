@@ -1,0 +1,22 @@
+{
+  "name": "layout",
+  "version": "1.0.0",
+  "description": "A Layout for the composable Service",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stvndall/ComposableLayout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stvndall/ComposableLayout/issues"
+  },
+  "homepage": "https://github.com/stvndall/ComposableLayout#readme",
+  "dependencies": {
+    "serve": "^11.3.0"
+  }
+}
